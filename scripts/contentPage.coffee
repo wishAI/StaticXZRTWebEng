@@ -11,8 +11,6 @@ class Color
       return
     new Color(Math.round(@R * (1 - dst) + clr.R * dst), Math.round(@G * (1 - dst) + clr.G * dst), Math.round(@B * (1 - dst) + clr.B * dst))
 
-
-
 onScroll = ->
   if(!isScrolling)
     requestAnimationFrame(changeViewByScrolling)
@@ -26,7 +24,7 @@ changeViewByScrolling = ->
   clrText = new Color(79, 79, 79)
   clrWhite = new Color(255, 255, 255)
   #console.log($(window).scrollTop()+"  "+$(document).height()+"  "+$(window).height())
-  if($(window).scrollTop() + $(window).height() + 200 > $(document).height() - footerHeight * movingSpeed)
+  if($(window).scrollTop() + $(window).height() + 200 > $(document).height() - footerHeight * movingSpeed && $(document).height() > $(window).height())
     targetfooterTrans = Math.floor((footerHeight * movingSpeed - ($(document).height() - ($(window).scrollTop() + $(window).height()))) / movingSpeed)
     $("footer").css("transform", "translateY(" + (-targetfooterTrans) + "px")
   else if($("footer").css("transform") != "translateY(0px)")
@@ -81,5 +79,8 @@ $(document).ready ->
   onScroll()
   window.addEventListener("scroll", onScroll)
   window.addEventListener("resize", onScroll)
+
+  $("#btnPrint").on "click", ->
+    window.print()
 
 

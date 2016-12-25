@@ -9,7 +9,7 @@
   background-size: cover
   background-color: $mainColor
   text-align: left
-  //overflow: hidden
+//overflow: hidden
 
 .slideContainer
   width: 711px
@@ -17,7 +17,6 @@
   position: relative
   margin-left: 50px
   margin-right: 50px
-  cursor: pointer
 
 .slides img
   width: 100%
@@ -31,6 +30,7 @@
   top: 0
   background-color: $mainColor_transparent
   transition: 0.5s ease
+  cursor: pointer
 
 .next
   right: 0
@@ -44,7 +44,7 @@
   color: white
   line-height: 400px
 
-.fade 
+.fade
   animation-name: fade
   animation-duration: 1.5s
 
@@ -58,7 +58,7 @@
   width: calc(100% - 820px)
   color: $mainColor_dark
 
-.latestNews a:link,.latestNews a:active,.latestNews a:visited
+.latestNews a:link, .latestNews a:active, .latestNews a:visited
   color: $mainColor_dark
 
 .newsTitle > h2
@@ -96,11 +96,11 @@
   margin-bottom: 40px
 
 .homeFlowContainer
+  display: block
   width: 300px
   height: 300px
   margin-left: 8px
   margin-right: 8px
-  display: inline-block
   text-align: left
   background-color: white
   box-shadow: 0 0 $boxShadowLength $boxShadowColor
@@ -124,23 +124,23 @@
 .homeFlowImageHover
   filter: brightness(120%)
 
-.homeFlowBox 
+.homeFlowBox
   padding-top: 20px
   padding-left: 20px
   padding-right: 20px
 
-.homeFlowBox h6 
+.homeFlowBox h6
   margin: 0
   font-size: 20px
   font-weight: normal
   line-height: 10px
   color: black
 
-.homeFlowBox p 
+.homeFlowBox p
   font-size: 14px
   color: $subheaderColor
 
-.resourceGalleryLink 
+.resourceGalleryLink
   width: 100%
 
 .resourceGalleryContainer
@@ -153,13 +153,13 @@
   background-repeat: no-repeat
   background-position: center center
 
-.galleryTitle 
+.galleryTitle
   margin-left: 120px
   color: white
   font-size: 50px
   font-weight: lighter
 
-.galleryInfo 
+.galleryInfo
   margin-left: 120px
   font-size: 20px
   color: $galleryTextColor
@@ -170,6 +170,62 @@
   right: 100px
   font-size: 60px
   color: white
+
+@media (max-device-width: 450px)
+  .galleryAction
+    display: none
+
+@media (max-width: 1200px)
+  .slideContainer
+    margin-left: auto
+    margin-right: auto
+
+  .latestNews
+    display: none
+
+@media (min-width: 1300px)
+  .resourceGalleryContainer
+    background-size: 100% auto
+
+@media (min-width: 1600px)
+  .homeFlowContainer
+    margin-left: 50px
+    margin-right: 50px
+
+  #contentHeader
+    justify-content: center
+
+  .slideContainer
+    margin-right: 250px
+
+  .latestNews
+    width: 600px
+
+  .galleryTitle, .galleryInfo
+    //transform: translateX(calc(50% - 760px))
+    margin-left: calc(50% - 760px + 120px)
+
+  .galleryAction
+    //transform: translateX(calc(760px - 50%))
+    right: calc(50% - 760px + 100px)
+
+
+@media (min-width: 2000px)
+  .homeFlowContainer
+    margin-left: 100px
+    margin-right: 100px
+
+  .slideContainer
+    margin-right: 550px
+
+  .galleryTitle, .galleryInfo
+    //transform: translateX(calc(50% - 760px))
+    margin-left: calc(50% - 905px + 120px)
+
+  .galleryAction
+    //transform: translateX(calc(760px - 50%))
+    right: calc(50% - 905px + 100px)
+
 
 
 

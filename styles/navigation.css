@@ -1,10 +1,10 @@
 nav {
-  height: 64px;
-  margin: 0;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
+  height: 64px;
+  margin: 0;
   z-index: 1;
   background-color: #eeeeee;
   overflow: hidden;
@@ -13,9 +13,11 @@ nav {
 nav * {
   display: inline-block; }
 
+#navLeft {
+  margin-left: 50px; }
+
 #logo {
   margin-top: 0;
-  margin-left: 50px;
   margin-right: 20px;
   padding: 0; }
 
@@ -62,5 +64,27 @@ nav * {
 
 #navRight {
   float: right; }
+
+@media (max-device-width: 450px) {
+  nav {
+    height: 120px; }
+
+  #logo img {
+    height: 110px;
+    margin-top: 6px; }
+
+  #logo span {
+    display: none; }
+
+  #nav_options li a, .userInfo li a {
+    height: 128px;
+    font-size: 30px;
+    line-height: 128px; } }
+@media (min-width: 1600px) {
+  #navLeft {
+    margin-left: calc(50% - 760px); } }
+@media (min-width: 2000px) {
+  #navLeft {
+    margin-left: calc(50% - 905px); } }
 
 /*# sourceMappingURL=navigation.css.map */

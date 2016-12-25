@@ -9,10 +9,9 @@
     <link rel="stylesheet" type="text/css" href="styles/homePage.css">
     <script type="text/javascript" src="scripts/jquery.js" defer></script>
     <script type="text/javascript" src="scripts/publicScript.js" defer></script>
-    <script type="text/ecmascript" src="scripts/mainPage.es6" defer></script>
     <script type="text/javascript" src="scripts/homePage.js" defer></script>
 </head>
-<body onresize="changeViewByClientSize()">
+<body>
 <nav>
     <div id="navLeft">
         <a id="logo" href="">
@@ -39,10 +38,10 @@
             <div class="slides fade">
                 <img alt="slide3" src="images/slide3.jpg">
             </div>
-            <div class="prev" onclick="plusSlides(-1)">
+            <div class="prev" id="btnSlidePrev">
                 <span>&#10094;</span>
             </div>
-            <div class="next" onclick="plusSlides(1)">
+            <div class="next" id="btnSlideNext">
                 <span>&#10095;</span>
             </div>
         </div>

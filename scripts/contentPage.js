@@ -41,7 +41,7 @@
     clrNav = new Color(238, 238, 238);
     clrText = new Color(79, 79, 79);
     clrWhite = new Color(255, 255, 255);
-    if ($(window).scrollTop() + $(window).height() + 200 > $(document).height() - footerHeight * movingSpeed) {
+    if ($(window).scrollTop() + $(window).height() + 200 > $(document).height() - footerHeight * movingSpeed && $(document).height() > $(window).height()) {
       targetfooterTrans = Math.floor((footerHeight * movingSpeed - ($(document).height() - ($(window).scrollTop() + $(window).height()))) / movingSpeed);
       $("footer").css("transform", "translateY(" + (-targetfooterTrans) + "px");
     } else if ($("footer").css("transform") !== "translateY(0px)") {
@@ -92,7 +92,10 @@
   $(document).ready(function() {
     onScroll();
     window.addEventListener("scroll", onScroll);
-    return window.addEventListener("resize", onScroll);
+    window.addEventListener("resize", onScroll);
+    return $("#btnPrint").on("click", function() {
+      return window.print();
+    });
   });
 
 }).call(this);

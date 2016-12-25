@@ -1,5 +1,8 @@
 $(document).ready ->
+  $(window).resize ->
+    setProperFlowNum()
   setupOptions()
+  setProperFlowNum()
 
 setupOptions = ->
 # if the options are not enough, increase it to 10
@@ -17,3 +20,16 @@ setupOptions = ->
       $(this).addClass("optionWhite")
     isWhite = !isWhite
     return
+
+setProperFlowNum = ->
+  clientWidth = $(document).width()
+  if(clientWidth > 1100)
+    num = 3
+  else if(clientWidth > 700)
+    num = 2
+  else
+    num = 1
+  $(".optionFlow").css("display", "none")
+  for i in [0...num]
+    $(".optionFlow").eq(i).css("display", "block")
+
